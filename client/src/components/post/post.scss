@@ -1,0 +1,266 @@
+@import "../../style.scss";
+
+.post {
+  @include themify($themes) {
+    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    border-radius: 20px;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    .container {
+      padding: 20px;
+
+      .user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        svg:hover{
+          cursor: pointer;
+        }
+
+        .userInfo {
+          display: flex;
+          gap: 20px;
+          @media screen and (max-width:481px){
+            gap: 10px;
+          }
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .details {
+            display: flex;
+            flex-direction: column;
+
+            .name {
+              font-weight: 500;
+            }
+
+            .date {
+              font-size: 12px;
+
+              @media screen and (max-width:481px){
+                font-size: 10px;
+              }
+            }
+          }
+        }
+        button {
+          position: absolute;
+          top: 30px;
+          right: 0;
+          border: none;
+          background-color: #f0544f;
+          padding: 5px;
+          cursor: pointer;
+          color: white;
+        }
+      }
+
+      .content {
+        margin: 20px 0px;
+
+        .media {
+          width: 100%;
+          max-height: 500px;
+          object-fit: cover;
+          margin-top: 20px;
+        }
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          font-size: 14px;
+
+          @media screen and (max-width: 481px) {
+            gap:5px;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .left input{
+    font-size: 11.7px;
+  }
+
+  .details a span{
+    font-size: 15px !important
+  }
+  .details span{
+    font-size: 8px !important;
+  }
+  .content p{
+    font-size: 12px;
+    margin: 0;
+  }
+  .comments .write{
+    font-size: 12px;
+    gap: 10px !important
+  }
+  .comments .comment{
+    gap: 10px !important
+  }
+
+  .comment span{
+    font-size: 12px !important;
+  }
+  .comment p{
+    font-size: 10px !important;
+  }
+  .comment .date{
+    font-size: 7px !important;
+  }
+  .item{
+    font-size: 12px !important;
+  }
+  .item svg{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 383px) {
+  .stories-heading{
+    font-size: 20px;
+  }
+  .no-story{
+    font-size: 12px;
+    padding-top: 3px;
+  }
+  .left input{
+    font-size: 10px;
+  }
+  .item span{
+    font-size: 9px !important;
+  }
+  .bottom .left .item img {
+    height: 17px !important; 
+  }
+  .bottom .right button{
+    font-size: 12px !important;
+  }
+  .details a span{
+    font-size: 13px !important
+  }
+  .details span{
+    font-size: 7px !important;
+  }
+  .content p{
+    font-size: 11px;
+    margin: 0;
+  }
+  .comments .write input, .comments .write button {
+    padding: 5px !important;
+  }
+
+  .comments .write{
+    font-size: 9px;
+  }
+
+  .comments .write img, .comments .comment img{
+    width: 30px !important;
+    height: 30px !important;
+  }
+  
+  .comment span{
+    font-size: 11px !important;
+  }
+  .comment p{
+    font-size: 9px !important;
+  }
+  .comment .date{
+    font-size: 7px !important;
+  }
+  .item{
+    font-size: 9px !important;
+  }
+  .item svg{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 342px) {
+
+  .left input{
+    font-size: 8px !important;
+  }
+  .item span{
+    font-size: 7px !important;
+  }
+  .bottom .right button{
+    font-size: 10px !important;
+  }
+  .bottom .left .item img {
+    height: 15px !important; 
+  }
+  
+  .post .container .user .userInfo img{
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .post .container .user svg{
+    font-size: 18px !important;
+  }
+
+  .details a span{
+    font-size: 10px !important
+  }
+  .details span{
+    font-size: 6px !important;
+  }
+  .content p{
+    font-size: 10px;
+    margin: 0;
+  }
+  .comments .write{
+    font-size: 8px;
+    gap: 5px !important
+  }
+  .comments .comment{
+    gap: 5px !important
+  }
+  .comment span{
+    font-size: 10px !important;
+  }
+  .comment p{
+    font-size: 8px !important;
+  }
+  .comment .date{
+    font-size: 6px !important;
+  }
+  .item{
+    font-size: 8px !important;
+  }
+  .item svg{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 290px){
+  .item{
+    font-size: 7px !important;
+  }
+  .item svg{
+    font-size: 11px;
+  }
+}

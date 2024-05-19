@@ -1,0 +1,65 @@
+@import "../../style.scss";
+
+.followings-container {
+  @include themify($themes) {
+  color: themed("textColor");
+  background-color: themed("bgSoft");
+  min-height: 100vh;
+  }
+  
+  .line {
+    @include themify($themes) {
+    margin-top: 10px;
+    width: 280px !important;
+    height: 7px;
+    background: linear-gradient(to right, transparent, themed("underLine"), transparent);
+    margin-left: auto;
+    margin-right: auto;
+    }
+  }
+  
+  h1{
+    font-weight: 700;
+  }
+
+  .follwing{
+    @include themify($themes) {
+    border: 2px solid themed("border") !important;
+    }
+
+  
+    .uinfo{
+      @include themify($themes) {
+        text-decoration: none;
+        color: themed("textColor");
+        position: relative;
+      }
+      .online {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: limegreen;
+        position: absolute;
+        top: 0;
+        left: 37px;
+      }
+    }
+
+    .btn-unfollow {
+      background-color: #5271ff !important;
+      cursor: pointer;
+    
+      &:hover{
+        background-color: #2c51f8 !important;
+        transition: background-color 0.3s ease;
+      }
+    }  
+  }
+
+  .profile-img{
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: cover;
+  }
+  
+}

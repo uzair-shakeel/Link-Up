@@ -1,0 +1,158 @@
+@import "../../style.scss";
+
+.rightBar {
+  @include themify($themes) {
+    flex: 3;
+    position: fixed;
+    height: 100%;
+    overflow: scroll;
+    right: 0;
+    background-color: themed("bgSoft");
+    width: 350px;
+
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 15px 15px 20px 0px;
+
+      .item {
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: themed("bg");
+
+        span {
+          color: gray;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 20px 0px;
+
+          .userInfo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+
+            .online {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background-color: limegreen;
+              position: absolute;
+              top: 0;
+              left: 30px;
+            }
+
+            p {
+              color: themed("textColorSoft");
+            }
+
+            span {
+              font-weight: 500;
+              color: themed("textColor");
+            }
+          }
+
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+              border: none;
+              padding: 5px;
+              color: white;
+              padding: 3px 4px;
+
+              &:first-child {
+                background-color: #22d245;
+              }
+
+              &:last-child {
+                background-color: #f0544f;
+              }
+
+              svg {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.rightbar-behind {
+  width: 350px;
+}
+
+@media screen and (max-width: 1073px) {
+  .rightBar,
+  .rightbar-behind {
+    width: 290px !important;
+  }
+}
+
+@media screen and (max-width: 1011px) {
+  .rightBar,
+  .rightbar-behind {
+    width: 260px !important;
+    font-size: 12px;
+    img {
+      width: 30px !important;
+      height: 30px !important;
+    }
+    .btn {
+      padding: 0 4px !important;
+      margin: 0 !important;
+      svg {
+        font-size: 15px !important;
+        padding: 0;
+      }
+    }
+
+    .online {
+      width: 8px !important;
+      height: 8px !important;
+      left: 23px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 982px) {
+  .rightBar,
+  .rightbar-behind {
+    width: 240px !important;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 961px) {
+  .rightbar-behind {
+    display: none !important;
+  }
+}

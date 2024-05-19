@@ -1,0 +1,42 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+@media screen and (max-width:768px) {
+  .chat-main-heading{
+    font-size: 105% !important;
+  }
+  .chat-list-box{
+    max-width: 200px !important;
+  }
+}
+
+@media screen and (max-width:576px) {
+  .chat-avatar{
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+@media screen and (max-width:487px) {
+  .one-chat{
+    max-width: 100px !important;
+  }
+  .chat-avatar{
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+@media screen and (max-width:405px) {
+  .one-chat{
+    max-width: 80px !important;
+  }
+  .chat-avatar{
+    width: 30px !important;
+    height: 30px !important;
+  }
+}

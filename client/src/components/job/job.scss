@@ -1,0 +1,426 @@
+@import "../../style.scss";
+
+.post {
+  @include themify($themes) {
+    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    border-radius: 20px;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    .container {
+      padding: 20px;
+
+      .user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        svg:hover {
+          cursor: pointer;
+        }
+
+        .userInfo {
+          display: flex;
+          gap: 20px;
+          @media screen and (max-width: 481px) {
+            gap: 10px;
+          }
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .details {
+            display: flex;
+            flex-direction: column;
+
+            .name {
+              font-weight: 500;
+            }
+
+            .date {
+              font-size: 12px;
+
+              @media screen and (max-width: 481px) {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+        .btn {
+          position: absolute;
+          top: 30px;
+          right: 0;
+          border: none;
+          background-color: #f0544f;
+          padding: 5px;
+          cursor: pointer;
+          color: white;
+
+          &:hover {
+            background-color: #bd1616;
+            transition: background-color 0.3s ease;
+          }
+        }
+        .deleteBtn {
+          position: absolute;
+          top: 65px;
+          right: 0;
+          border: none;
+          border-radius: 7px;
+          background-color: #f0544f;
+          padding: 5px;
+          cursor: pointer;
+          color: white;
+
+          &:hover {
+            background-color: #bd1616;
+            transition: background-color 0.3s ease;
+          }
+        }
+
+        .greenButton {
+          position: absolute;
+          top: 30px;
+          right: 0;
+          border-radius: 7px;
+          border: none;
+          background-color: #22d245;
+          padding: 5px;
+          cursor: pointer;
+          color: white;
+
+          &:hover {
+            background-color: #0f962f;
+            transition: background-color 0.3s ease;
+          }
+        }
+      }
+
+      .content {
+        margin: 20px 0px;
+        padding: 0 10px;
+
+        .media {
+          width: 100%;
+          max-height: 500px;
+          object-fit: cover;
+          margin-top: 20px;
+        }
+      }
+      .title-div {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .title {
+        font-weight: 500;
+        font-size: 25px;
+      }
+      .location-parent {
+        display: flex;
+        gap: 20px;
+      }
+      .location-div {
+        display: flex;
+        gap: 3px;
+      }
+      .location {
+        font-weight: 400;
+        font-size: 15px;
+      }
+      .company-div {
+        display: flex;
+        gap: 3px;
+      }
+      .company {
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .details {
+        font-size: 11px;
+        color: rgb(86, 85, 85);
+      }
+      .low {
+        display: flex;
+        gap: 20px;
+      }
+
+      .blueBtn {
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+        background-color: #716af2;
+        border-radius: 7px;
+
+        &:hover {
+          background-color: #564df6;
+          transition: background-color 0.3s ease;
+        }
+      }
+
+      .closedBtn {
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        cursor: not-allowed;
+        background-color: #fa6767;
+
+        border-radius: 7px;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translateY(0);
+        }
+        25% {
+          transform: translateY(-2px);
+        }
+        50% {
+          transform: translateY(3px);
+        }
+        75% {
+          transform: translateY(-2px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .shake-on-hover:hover {
+        animation: shake 0.8s;
+        color: #22d245;
+        transition: 0.3s;
+      }
+
+      .greenButton {
+        border-radius: 7px;
+        border: none;
+        background-color: #22d245;
+        padding: 10px;
+        cursor: pointer;
+        color: white;
+
+        &:hover:not(:disabled) {
+          background-color: #0f962f;
+          transition: background-color 0.3s ease;
+        }
+      }
+      .yellowButton {
+        border-radius: 7px;
+        border: none;
+        background-color: #eeac4a;
+        padding: 10px;
+        cursor: pointer;
+        color: white;
+
+        &:hover:not(:disabled) {
+          background-color: #dc952a;
+          transition: background-color 0.3s ease;
+        }
+      }
+
+      .apply {
+        padding: 10px 20px;
+        background-color: blue;
+        color: white;
+        border-radius: 20px;
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          font-size: 14px;
+
+          @media screen and (max-width: 481px) {
+            gap: 5px;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .left input {
+    font-size: 11.7px;
+  }
+
+  .details a span {
+    font-size: 15px !important;
+  }
+  .details span {
+    font-size: 8px !important;
+  }
+  .content p {
+    font-size: 12px;
+    margin: 0;
+  }
+  .comments .write {
+    font-size: 12px;
+    gap: 10px !important;
+  }
+  .comments .comment {
+    gap: 10px !important;
+  }
+
+  .comment span {
+    font-size: 12px !important;
+  }
+  .comment p {
+    font-size: 10px !important;
+  }
+  .comment .date {
+    font-size: 7px !important;
+  }
+  .item {
+    font-size: 12px !important;
+  }
+  .item svg {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 383px) {
+  .stories-heading {
+    font-size: 20px;
+  }
+  .no-story {
+    font-size: 12px;
+    padding-top: 3px;
+  }
+  .left input {
+    font-size: 10px;
+  }
+  .item span {
+    font-size: 9px !important;
+  }
+  .bottom .left .item img {
+    height: 17px !important;
+  }
+  .bottom .right button {
+    font-size: 12px !important;
+  }
+  .details a span {
+    font-size: 13px !important;
+  }
+  .details span {
+    font-size: 7px !important;
+  }
+  .content p {
+    font-size: 11px;
+    margin: 0;
+  }
+  .comments .write input,
+  .comments .write button {
+    padding: 5px !important;
+  }
+
+  .comments .write {
+    font-size: 9px;
+  }
+
+  .comments .write img,
+  .comments .comment img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .comment span {
+    font-size: 11px !important;
+  }
+  .comment p {
+    font-size: 9px !important;
+  }
+  .comment .date {
+    font-size: 7px !important;
+  }
+  .item {
+    font-size: 9px !important;
+  }
+  .item svg {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 342px) {
+  .left input {
+    font-size: 8px !important;
+  }
+  .item span {
+    font-size: 7px !important;
+  }
+  .bottom .right button {
+    font-size: 10px !important;
+  }
+  .bottom .left .item img {
+    height: 15px !important;
+  }
+
+  .post .container .user .userInfo img {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .post .container .user svg {
+    font-size: 18px !important;
+  }
+
+  .details a span {
+    font-size: 10px !important;
+  }
+  .details span {
+    font-size: 6px !important;
+  }
+  .content p {
+    font-size: 10px;
+    margin: 0;
+  }
+  .comments .write {
+    font-size: 8px;
+    gap: 5px !important;
+  }
+  .comments .comment {
+    gap: 5px !important;
+  }
+  .comment span {
+    font-size: 10px !important;
+  }
+  .comment p {
+    font-size: 8px !important;
+  }
+  .comment .date {
+    font-size: 6px !important;
+  }
+  .item {
+    font-size: 8px !important;
+  }
+  .item svg {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 290px) {
+  .item {
+    font-size: 7px !important;
+  }
+  .item svg {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,16 @@
+.light-theme {
+    // Define light theme styles here
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  // Dark theme styles
+  .dark-theme {
+    // Define dark theme styles here
+    background-color: #333333 !important;
+    color: #ffffff !important;
+  }
+
+  .place-holder-white::placeholder{
+    color:#ffffff !important;
+  }
