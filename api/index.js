@@ -22,7 +22,7 @@ const server = http.createServer(app); // Create HTTP server
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://link-up-sage.vercel.app"],
     // credentials: true,
   },
 });
