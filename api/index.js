@@ -29,7 +29,7 @@ const io = new Server(server, {
 
 // Connect to MongoDB
 mongoose.connect(
-  "mongodb+srv://sharjeelbaloch345:sharjeelbaloch345@cluster0.3q0g6ko.mongodb.net/social_app?retryWrites=true&w=majority"
+  "mongodb+srv://dabiduh:loco157@projectfinal.5crqbft.mongodb.net/socialappconnection?retryWrites=true&w=majority&appName=projectfinal"
 );
 
 const db = mongoose.connection;
@@ -55,7 +55,7 @@ const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     // Use the original filename provided in FormData
     cb(null, file.originalname);
-  }
+  },
 });
 
 const upload = multer({
