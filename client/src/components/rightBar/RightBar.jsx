@@ -15,8 +15,7 @@ const RightBar = () => {
   const [onlineFriends, setOnlineFriends] = useState([]); // Initialize as an empty array
   const [onlineFriendsLoading, setOnlineFriendsLoading] = useState(true);
   const [onlineFriendsError, setOnlineFriendsError] = useState(null);
-  const { currentUser } = useContext(AuthContext
-    );
+  const { currentUser } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchOnlineFriends = async () => {
@@ -33,10 +32,9 @@ const RightBar = () => {
         setOnlineFriendsLoading(false);
       }
     };
-  
+
     fetchOnlineFriends();
   }, []);
-  
 
   useEffect(() => {
     const fetchSuggestedUsers = async () => {
@@ -45,10 +43,12 @@ const RightBar = () => {
         if (response.status !== 200) {
           throw new Error("Failed to fetch suggested users");
         }
-        
+
         // Filter out the current user from suggested users
-        const filteredUsers = response.data.filter(user => user._id !== currentUser._id);
-        
+        const filteredUsers = response?.data?.filter(
+          (user) => user._id !== currentUser._id
+        );
+
         setSuggestedUsers(filteredUsers);
         setLoading(false);
       } catch (error) {
@@ -57,7 +57,7 @@ const RightBar = () => {
         setLoading(false);
       }
     };
-  
+
     fetchSuggestedUsers();
   }, [currentUser.id]);
 
@@ -141,8 +141,8 @@ const RightBar = () => {
             {!onlineFriendsLoading &&
             !onlineFriendsError &&
             onlineFriends &&
-            onlineFriends.length > 0 ? (
-              onlineFriends.map((friend) => (
+            onlineFriends?.length > 0 ? (
+              onlineFriends?.map((friend) => (
                 <div className="user" key={friend._id}>
                   <Link to={`/profile/${friend._id}`} className="userInfo">
                     <img

@@ -3,11 +3,12 @@ import Job from "../job/Job";
 import "./jobs.scss";
 import { useQuery } from "@tanstack/react-query";
 import { DarkModeContext } from "../../context/darkModeContext";
+import { BASE_URL } from "../../axios";
 
 const Posts = ({}) => {
   const { darkMode } = useContext(DarkModeContext);
   const { isLoading, error, data } = useQuery(["closed"], async () => {
-    const response = await fetch("http://localhost:8800/api/jobs/closed");
+    const response = await fetch(`${BASE_URL}/jobs/closed`);
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }

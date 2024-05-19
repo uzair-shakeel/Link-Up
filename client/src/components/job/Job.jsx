@@ -84,7 +84,7 @@ const Job = ({ job }) => {
     {
       onSuccess: () => {
         // Invalidate and refetch
-        queryClient.invalidateQueries(["posts"]);
+        queryClient.invalidateQueries(["jobs"]);
       },
     }
   );
@@ -148,7 +148,7 @@ const Job = ({ job }) => {
 
   const handleDelete = () => {
     deleteMutation.mutate(job._id);
-    toast.success("Post Deleted Successfull");
+    toast.success("Job Deleted Successfull");
   };
 
   const handleClose = () => {

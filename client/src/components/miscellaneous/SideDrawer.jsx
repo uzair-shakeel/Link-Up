@@ -15,7 +15,7 @@ import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../../context/ChatProvider";
 import ChatLoading from "../ChatLoading";
 import { Spinner } from "@chakra-ui/spinner";
-import { makeRequest } from "../../axios";
+import { BASE_URL, makeRequest } from "../../axios";
 import "./drawer.scss";
 
 const SideDrawer = () => {
@@ -37,12 +37,9 @@ const SideDrawer = () => {
     try {
       setLoading(true);
 
-      const response = await fetch(
-        `http://localhost:8800/api/users?search=${search}`,
-        {
-          credentials: "include",
-        }
-      );
+      const response = await fetch(`${BASE_URL}/users?search=${search}`, {
+        credentials: "include",
+      });
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

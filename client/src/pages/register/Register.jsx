@@ -8,6 +8,7 @@ import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 import { InputGroup, Input, Button, InputRightElement } from "@chakra-ui/react";
+import { BASE_URL } from "../../axios";
 
 const Register = () => {
   const [show, setShow] = useState(false);
@@ -28,7 +29,7 @@ const Register = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8800/api/auth/register", inputs);
+      await axios.post(`${BASE_URL}/auth/register`, inputs);
       toast.success("Registration Successful.");
       navigate("/login");
     } catch (err) {

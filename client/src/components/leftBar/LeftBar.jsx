@@ -15,6 +15,7 @@ import { useQuery } from "@tanstack/react-query";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { DarkModeContext } from "../../context/darkModeContext";
+import { BASE_URL } from "../../axios";
 const LeftBar = () => {
   const { darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
@@ -25,7 +26,7 @@ const LeftBar = () => {
   };
 
   const { isLoading, error, data } = useQuery(["jobs"], async () => {
-    const response = await fetch("http://localhost:8800/api/jobs");
+    const response = await fetch(`${BASE_URL}/jobs`);
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }

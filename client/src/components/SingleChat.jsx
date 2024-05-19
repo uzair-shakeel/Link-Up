@@ -16,7 +16,7 @@ import { ChatState } from "../context/ChatProvider";
 import { makeRequest } from "../axios";
 import { DarkModeContext } from "../context/darkModeContext";
 
-const ENDPOINT = "http://localhost:8800";
+const ENDPOINT = `http://localhost:8800` ;
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {

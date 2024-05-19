@@ -27,7 +27,6 @@ const Stories = () => {
       },
     }
   );
-  
 
   const handleFileChange = async (e) => {
     const selectedFile = e.target.files[0];
@@ -43,7 +42,7 @@ const Stories = () => {
     }
   };
 
-  console.log(currentUser)
+  console.log(currentUser);
 
   const uploadStory = async (file) => {
     try {
@@ -73,9 +72,9 @@ const Stories = () => {
   );
 
   useEffect(() => {
-    if (data && data.length > 0) {
+    if (data && data?.length > 0) {
       const groupedStories = {};
-      data.forEach((story) => {
+      data?.forEach((story) => {
         if (!(story.userId in groupedStories)) {
           groupedStories[story.userId] = [];
         }

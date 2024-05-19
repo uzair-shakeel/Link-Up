@@ -7,6 +7,7 @@ import GroupChatModal from "./miscellaneous/GroupChatModal";
 import { Button } from "@chakra-ui/react";
 import { ChatState } from "../context/ChatProvider";
 import { DarkModeContext } from "../context/darkModeContext";
+import { BASE_URL } from "../axios";
 
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
@@ -15,7 +16,7 @@ const MyChats = ({ fetchAgain }) => {
 
   const fetchChats = async () => {
     try {
-      const response = await fetch("http://localhost:8800/api/chat", {
+      const response = await fetch(`${BASE_URL}/chat`, {
         credentials: "include",
       });
 
